@@ -1,8 +1,11 @@
-import akka.{ AkkaBuild, Formatting }
+import akka.{ AkkaBuild, Formatting, Protobuf }
 
 AkkaBuild.defaultSettings
 AkkaBuild.mayChangeSettings
 Formatting.formatSettings
+
+// To be ablet to import ContainerFormats.proto
+Protobuf.importPath := Some(baseDirectory.value / ".." / "akka-remote" / "src" / "main" / "protobuf" )
 
 disablePlugins(MimaPlugin)
 
